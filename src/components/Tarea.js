@@ -23,7 +23,7 @@ const Tarea = ({ tarea, editarTarea, eliminarTarea }) => {
          tarea.estado = false;
       }
 
-      await fetch(`http://localhost:4000/tareas/${tarea._id}`, {
+      await fetch(`${process.env.REACT_APP_BACKEND_TASK_ID}/${tarea._id}`, {
          method: 'PUT',
          body: JSON.stringify(tarea),
          headers: {
